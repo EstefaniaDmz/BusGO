@@ -14,7 +14,7 @@ const ParadaScreen = ({route, navigation}: any) => {
 
     useEffect(() => {
         const recuperar = async() => {
-            await fetch(api + "parada/" + ruta.idRuta,
+            await fetch(api + "parada/" + ruta.id,
             {method: "GET", 
                 headers: {
                     'Content-Type': 'application/json'

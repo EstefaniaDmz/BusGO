@@ -1,4 +1,4 @@
-export interface Ruta{
+export interface RolUsuario{
     id?: number;
     nombre?: string;
 };

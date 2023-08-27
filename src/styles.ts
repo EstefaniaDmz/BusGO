@@ -89,6 +89,7 @@ export const globalStyle = StyleSheet.create({
       containerBus: {
         borderColor: '#3685c3',
         marginBottom: 10,
+        width: "90%",
         borderWidth: 4,
         borderRadius: 10,
       },
@@ -106,10 +107,21 @@ export const globalStyle = StyleSheet.create({
         color: "#4953b2",
       },
       imgBus: {
-        width: 28,
-        height: 28,
-        alignSelf: 'center',
+        width: 88,
+        height: 88,
         position: 'absolute',
-        top: 0,
+        marginTop: 5
+      },
+      mapaContainer: {},
+      mapa: {
+        ...StyleSheet.absoluteFillObject
+      },
+      bckgModal: {
+        justifyContent: 'center',
+          alignItems: 'center',
+        width: '80%',
+        height: '90%',
+        borderRadius: 10,
+        backgroundColor: "rgba(195, 236, 247, 1)",
       },
 });

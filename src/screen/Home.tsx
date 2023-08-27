@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { addUser, userSelector } from "../redux/reducers/userReducer";
 import { globalStyle } from "../styles";
-import { Ruta } from "../model/ruta";
+import { Ruta } from "../model/test/ruta";
 import { api } from "../api";
 
 const HomeScreen = ({navigation}: any) => {
@@ -13,7 +13,7 @@ const HomeScreen = ({navigation}: any) => {
         const validadCiudad = async() => {
             const cd = await AsyncStorage.getItem('idCiudad');
             if(cd){
-                await fetch(api + "ruta/" + cd, 
+                await fetch(api + "vwParada/ruta/" + cd, 
                 {method: "GET", 
                 headers: {
                     'Content-Type': 'application/json'
@@ -27,9 +27,8 @@ const HomeScreen = ({navigation}: any) => {
             }
         };
         validadCiudad();
-    }, [])
+    }, []);
 
-    const user = useSelector(userSelector);
     const dispatch = useDispatch();
     const cerrarSesion = async() => {
         await AsyncStorage.removeItem('token');
@@ -51,7 +50,7 @@ const HomeScreen = ({navigation}: any) => {
                 </View>
             )}   
             {rutas.map(item => (
-                    <TouchableOpacity key={item.id} style={[globalStyle.containerNotes]} onPress={() => navigation.navigate('ParadaScreen', {ruta: item})}>
+                    <TouchableOpacity key={item.idRuta} style={[globalStyle.containerNotes]} onPress={() => navigation.navigate('ParadaScreen', {ruta: item})}>
                         <Text style={[globalStyle.titleNote]}>{item.Ruta}</Text>
                     </TouchableOpacity>
                 ))} 

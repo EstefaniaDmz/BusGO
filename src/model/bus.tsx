@@ -3,4 +3,5 @@ export interface Bus{
     placa?: string;
     numero?: string;
     idRuta?: number;
+    idChofer?: number;
 };

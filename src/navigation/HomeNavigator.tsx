@@ -1,8 +1,10 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from "../screen/Home";
-import ParadaScreen from "../screen/Paradas";
-import BusScreen from "../screen/Bus";
+//import ParadaScreen from "../screen/Paradas";
+//import BusScreen from "../screen/Bus";
+import MapScreen from "../screen/mapa";
+import PruebaScreen from "../screen/prba";
 
 const HomeNavigator = () =>{
     const HomeStack = createNativeStackNavigator();
@@ -10,8 +12,8 @@ const HomeNavigator = () =>{
     return (
     <HomeStack.Navigator screenOptions={{headerShown: false}}>
         <HomeStack.Screen name="HomeScreen" component={HomeScreen} />
-        <HomeStack.Screen name="ParadaScreen" component={ParadaScreen} />
-        <HomeStack.Screen name="BusScreen" component={BusScreen} />
+        <HomeStack.Screen name="ParadaScreen" component={MapScreen} />
+        <HomeStack.Screen options={{presentation: 'modal'}} name="BusScreen" component={PruebaScreen} />
     </HomeStack.Navigator>
     );
 };

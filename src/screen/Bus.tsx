@@ -13,7 +13,7 @@ const img = require("../img/bus.png");
 const BusScreen = ({route, navigation}: any) =>{
     const {parada}: {parada: Parada} = route ? route.params: {};
     const [buses, setBuses] = useState<Bus[]>([]);
-
+   
     useEffect(() => {
         const recuperar = async() => {
             await fetch(api + "bus/" + parada.idRuta,
@@ -48,6 +48,7 @@ const BusScreen = ({route, navigation}: any) =>{
                         <Text style={{fontSize: 18, fontWeight: 'bold', marginBottom: 15, marginLeft: 35, color:'#263b8f'}}>{item.numero}</Text>
                         <Text style={{fontSize: 14, padding:2, color:'#1d3eb8', marginLeft: 20}}>Placa: {item.placa}</Text>
                         <Text style={{fontSize: 18, fontWeight: 'bold', marginBottom: 15, color:'#263b8f', marginLeft: 40}}>{parada.tiempo} min</Text>
+
                         </View>
                     </View>
                 ))}
